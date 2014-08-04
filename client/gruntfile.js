@@ -12,15 +12,20 @@ module.exports = function(grunt) {
         src: ['js/**/*.js'],
         dest: 'js/app.bundle.js',
         options: {
-          external: ['jQuery']
+          watch: true,
+          keepAlive: true
         }
       }
+    },
+    clean:{
+      bundle: ['js/app.bundle.js']
     }
 
   });
 
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task.
-  grunt.registerTask('default', ['browserify']);
+  grunt.registerTask('default', ['clean:bundle','browserify']);
 };
