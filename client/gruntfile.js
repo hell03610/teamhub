@@ -19,13 +19,20 @@ module.exports = function(grunt) {
     },
     clean:{
       bundle: ['js/app.bundle.js']
+    },
+    connect: {
+      server: {
+        options: {
+          port: 3000
+        }
+      }
     }
-
   });
 
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task.
-  grunt.registerTask('default', ['clean:bundle','browserify']);
+  grunt.registerTask('default', ['connect:server','clean:bundle','browserify']);
 };
