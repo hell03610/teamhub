@@ -31,16 +31,33 @@ module.exports = {
     },
 
     signIn: function (authResult) {
+        var self = this;
         gapi.client.load('plus','v1', function(){
             if (authResult['access_token']) {
-                app.navigate('home');
+                self.fetchProfile(function(){}, function(profile){
+                    app.currentUser = profile;
+                    app.navigate('home');
+                });
             } else if (authResult['error']) {
               // There was an error, which means the user is not signed in.
               // As an example, you can handle by writing to the console:
               console.log('There was an error: ' + authResult['error']);
             }
         });
+    },
+
+    fetchProfile: function(onError, onSuccess){
+      var self = this;
+      var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+      request.execute( function(profile) {
+        if (profile.error) {
+          onError(profile);
+          return;
+        }
+        onSuccess(profile);
+      });
     }
+
 };
 
 // run it
