@@ -13,7 +13,8 @@ module.exports = function(grunt) {
         dest: 'js/app.bundle.js',
         options: {
           watch: true,
-          keepAlive: true
+          keepAlive: true,
+          transform: ['browserify-handlebars']
         }
       }
     },

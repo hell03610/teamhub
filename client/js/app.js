@@ -5,8 +5,7 @@ var MainView = require('./views/main');
 module.exports = {
     blastoff: function () {
         var self = window.app = this;
-
-        // // init our URL handlers and the history tracker
+        // init our URL handlers and the history tracker
         this.router = new Router();
 
         // wait for document ready to render our main view
