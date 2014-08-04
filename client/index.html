@@ -10,6 +10,7 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <link rel="stylesheet" href="public/css/normalize.css">
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
         <link rel="stylesheet" href="public/css/main.css">
         <script type="text/javascript">
             (function() {
@@ -22,9 +23,16 @@
   </script>
     </head>
     <body>
-
         <!-- Add your site or application content here -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="app.bundle.js"></script>
+        <script>
+            function signIn(authResult)
+            {
+                var button = document.querySelector('.g-signin');
+                if(button) button.removeClass('hidden');
+                app.signIn(authResult);
+            }
+        </script>
     </body>
 </html>
