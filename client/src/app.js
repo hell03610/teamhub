@@ -1,12 +1,14 @@
 var Router = require('./router');
 var domReady = require('domready');
 var MainView = require('./main');
+var People = require('./model/people');
 
 module.exports = {
     blastoff: function () {
         var self = window.app = this;
         // init our URL handlers and the history tracker
         this.router = new Router();
+        this.people = new People();
 
         // wait for document ready to render our main view
         // this ensures the document has a body, etc.
