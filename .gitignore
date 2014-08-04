@@ -2,4 +2,4 @@ client/node_modules
 .grunt
 logs
 *.log
-client/js/app.bundle.js
+client/app.bundle.js

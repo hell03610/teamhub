@@ -1,6 +1,6 @@
 var Router = require('./router');
 var domReady = require('domready');
-var MainView = require('./views/main');
+var MainView = require('./main');
 
 module.exports = {
     blastoff: function () {

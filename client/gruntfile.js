@@ -9,8 +9,8 @@ module.exports = function(grunt) {
 
     browserify: {
       client: {
-        src: ['js/**/*.js'],
-        dest: 'js/app.bundle.js',
+        src: ['src/**/*.js'],
+        dest: 'app.bundle.js',
         options: {
           watch: true,
           keepAlive: true,
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       }
     },
     clean:{
-      bundle: ['js/app.bundle.js']
+      bundle: ['app.bundle.js']
     },
     connect: {
       server: {

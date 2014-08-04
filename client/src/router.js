@@ -1,5 +1,5 @@
 var Router = require('ampersand-router');
-var HomeView = require('./views/home')
+var HomeView = require('./home/home')
 
 module.exports = Router.extend({
     routes: {

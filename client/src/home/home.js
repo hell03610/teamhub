@@ -1,6 +1,6 @@
 var AmpersandView = require('ampersand-view');
 
 module.exports = AmpersandView.extend({
-    template: require('./../../templates/home.hbs'),
+    template: require('./home.hbs'),
     autoRender: true
 });
