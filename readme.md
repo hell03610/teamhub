@@ -2,7 +2,10 @@
 
 ## How to install
 
-You will need [node.js][http://nodejs.org/], [grunt-cli][http://gruntjs.com/getting-started] and [ruby][https://www.ruby-lang.org].
+You will need
+  - node.js:http://nodejs.org/,
+  - grunt-cli: http://gruntjs.com/getting-started
+  - ruby: https://www.ruby-lang.org
 
 ```
 cd server
