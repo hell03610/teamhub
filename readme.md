@@ -18,10 +18,14 @@ npm install
 
 To run the server
 
+Copy the client id and client secret to client_secrets.json
+
 ```
 cd server
 ./script/server
 ```
+
+
 
 To copy the dist to the server and start the watch
 
