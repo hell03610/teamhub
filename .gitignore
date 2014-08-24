@@ -1,6 +1,7 @@
 client/node_modules
 .grunt
 logs
+ui
 *.log
 client/public/js/app.bundle.js
 server/public
