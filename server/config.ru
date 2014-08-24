@@ -5,7 +5,7 @@ use Rack::Static,
   :root => "public"
 
 map '/api' do
-  run Cuba
+  run Teamhub
 end
 
 run lambda { |env|
