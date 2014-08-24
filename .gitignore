@@ -5,3 +5,4 @@ ui
 *.log
 client/public/js/app.bundle.js
 server/public
+server/client_secrets.json
