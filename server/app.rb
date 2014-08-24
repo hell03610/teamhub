@@ -1,6 +1,8 @@
 require "cuba"
 require 'google/api_client'
 require 'google/api_client/client_secrets'
+require 'json'
+
 
 $credentials = Google::APIClient::ClientSecrets.load
 $authorization = Signet::OAuth2::Client.new(
@@ -12,7 +14,7 @@ $authorization = Signet::OAuth2::Client.new(
   :scope => 'https://www.googleapis.com/auth/plus.login')
 $client = Google::APIClient.new
 
-Cuba.use Rack::Session::Cookie, :secret => "__a_very_long_string__"
+
 
 Cuba.define do
 
@@ -44,6 +46,12 @@ Cuba.define do
   on get do
     on "hello" do
       res.write "Hello world!"
+    end
+
+    on 'team' do
+      team = [{name: 'John Smith', avatar: 'http://robohash.org/1'},
+              {name: 'Pedro Martinez', avatar: 'http://robohash.org/2'}]
+      res.write team.to_json
     end
 
     on root do

@@ -4,5 +4,5 @@ var Person = require('./person');
 
 module.exports = Collection.extend({
     model: Person,
-    url: 'http://jsonplaceholder.typicode.com/users'
+    url: '/api/team'
 });
